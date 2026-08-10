@@ -72,9 +72,9 @@ end)
 
 local Tabs = {
 	Main = window:AddTab("Main"),
+	Farming = window:AddTab("Farming"),
 	Killing = window:AddTab("Killing"),
 	Specs = window:AddTab("Specs"),
-	Farming = window:AddTab("Farming"),
 	Inventory = window:AddTab("Inventory"),
 	Teleport = window:AddTab("Teleports"),
 	Stats = window:AddTab("Stats"),
@@ -84,7 +84,7 @@ local Tabs = {
 Tabs.Info:Show()
 Tabs.Info:AddLabel("Made By PrimeKenzouu with ♥️").TextSize = 17
 Tabs.Info:AddLabel("Official TikTok: Kenzouu Warfreakkk!").TextSize = 17
-Tabs.Info:AddButton("Copy Discord Invite", function()
+Tabs.Info:AddButton("Copy TikTok Link", function()
 	if setclipboard then
 		setclipboard("https://tiktok.com/kenzxouu.official")
 		game.StarterGui:SetCore("SendNotification", {Title = "Link Copied!", Text = "You can continue to TikTok now.", Duration = 3})
