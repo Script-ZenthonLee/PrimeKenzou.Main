@@ -53,7 +53,7 @@ function Utils.greeting()
 	else return "Good Night " .. PlayerData.DisplayName end
 end
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/KyleXAkimbo/Cracked-GUI/refs/heads/main/JeloPaid", true))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TryHarderDeobfuscatingHAHAHAlol/Privatezz/refs/heads/main/GUI%20Library", true))()
 
 local window = library:AddWindow("PrimeKenzouu | Main - " .. Utils.greeting(), {
 	title_bar = {Color3.fromRGB(255, 0, 0), Color3.fromRGB(155, 0, 0)},
