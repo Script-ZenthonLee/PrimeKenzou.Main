@@ -1581,7 +1581,7 @@ local RockData = {
 	Data = {["Tiny Rock - 0 Dura"] = 0, ["Large Rock - 100 Dura"] = 100, ["Punching Rock - 10 Dura"] = 10,
 		["Golden Rock - 5k Dura"] = 5000, ["Frost Rock - 150k Dura"] = 150000, ["Mythical Rock - 400k Dura"] = 400000,
 		["Eternal Rock - 750k Dura"] = 750000, ["Legend Rock - 1m Dura"] = 1000000, ["Muscle King Rock - 5m Dura"] = 5000000,
-		["Jungle Rock - 10m Dura"] = 10000000},
+		["Jungle Rock - 10m Dura"] = 10000000, ["Industrial Rock - 25m Dura"] = 25000000},
 	SelectedRock = nil
 }
 
@@ -1638,9 +1638,9 @@ end)
 Tabs.Farming:AddLabel("🔥 Better Strength Farming:")
 
 local farmingConfigs = {
-	{name = "Pushup + Jungle Rock", tool = "Pushups", rock = "Ancient Jungle Rock"},
-	{name = "Pushup + Muscle King Rock", tool = "Pushups", rock = "Muscle King Mountain"},
-	{name = "Pushup + Legends Rock", tool = "Pushups", rock = "Rock Of Legends"}
+	{name = "Pushup + Industrial Rock", tool = "Pushups", rock = "Industrial Rock"},
+	{name = "Pushup + Industrial Rock", tool = "Pushups", rock = "Industrial Rock"},
+	{name = "Pushup + Industrial Rock", tool = "Pushups", rock = "Industrial Rock"}
 }
 
 for _, config in ipairs(farmingConfigs) do
