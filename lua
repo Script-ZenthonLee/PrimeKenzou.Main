@@ -1638,9 +1638,9 @@ end)
 Tabs.Farming:AddLabel("🔥 Better Strength Farming:")
 
 local farmingConfigs = {
-	{name = "Pushup + Industrial Rock", tool = "Pushups", rock = "Industrial Rock"},
-	{name = "Pushup + Industrial Rock", tool = "Pushups", rock = "Industrial Rock"},
-	{name = "Pushup + Industrial Rock", tool = "Pushups", rock = "Industrial Rock"}
+	{name = "Pushup + Overcharged Rock", tool = "Pushups", rock = "Overcharged Rock"},
+	{name = "Situps + OverCharged Rock", tool = "Situps", rock = "Overcharged Rock"},
+	{name = "Handstands + Overcharged Rock", tool = "Handstands", rock = "Overcharged Rock"}
 }
 
 for _, config in ipairs(farmingConfigs) do
