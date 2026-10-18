@@ -56,11 +56,11 @@ end
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TryHarderDeobfuscatingHAHAHAlol/Privatezz/refs/heads/main/GUI%20Library", true))()
 
 local window = library:AddWindow("PrimeKenzouu | Main - " .. Utils.greeting(), {
-	title_bar = {Color3.fromRGB(255, 0, 0), Color3.fromRGB(155, 0, 0)},
+	title_bar = {Color3.fromRGB(0, 0, 0), Color3.fromRGB(0, 0, 0)},
 	title_bar_transparency = 0.3,
-	background = {Color3.fromRGB(90, 0, 0), Color3.fromRGB(0, 0, 0)},
+	background = {Color3.fromRGB(0, 0, 0), Color3.fromRGB(0, 0, 0)},
 	background_transparency = 0.2,
-	main_color = Color3.fromRGB(255, 0, 0),
+	main_color = Color3.fromRGB(0, 0, 0),
 	min_size = Vector2.new(530, 350),
 	can_resize = true,
 })
@@ -86,7 +86,7 @@ Tabs.Info:AddLabel("Made By PrimeKenzouu with ♥️").TextSize = 17
 Tabs.Info:AddLabel("Official TikTok: Kenzouu Warfreakkk!").TextSize = 17
 Tabs.Info:AddButton("Copy TikTok Link", function()
 	if setclipboard then
-		setclipboard("https://tiktok.com/kenzxouu.official")
+		setclipboard("https://tiktok.com/@officialkenzouu")
 		game.StarterGui:SetCore("SendNotification", {Title = "Link Copied!", Text = "You can continue to TikTok now.", Duration = 3})
 	else
 		game.StarterGui:SetCore("SendNotification", {Title = "Error!", Text = "Clipboard not Supported.", Duration = 3})
@@ -96,7 +96,7 @@ end)
 Tabs.Info:AddLabel("")
 local wLabel = Tabs.Info:AddLabel("PRIVATE VERSION")
 wLabel.TextSize = 40
-wLabel.Font = Enum.Font.Arcade
+wLabel.Font = Enum.Font.LuckiestGuy
 
 Tabs.Main:AddLabel("⚙️ User Settings:")
 
@@ -1638,9 +1638,10 @@ end)
 Tabs.Farming:AddLabel("🔥 Better Strength Farming:")
 
 local farmingConfigs = {
-	{name = "Pushup + Overcharged Rock", tool = "Pushups", rock = "Overcharged Rock"},
-	{name = "Situps + OverCharged Rock", tool = "Situps", rock = "Overcharged Rock"},
-	{name = "Handstands + Overcharged Rock", tool = "Handstands", rock = "Overcharged Rock"}
+	{name = "Pushup + Hallowed Rock", tool = "Pushups", rock = "Hallowed Rock"},
+	{name = "Situps + Hallowed Rock", tool = "Situps", rock = "Hallowed Rock"},
+	{name = "Handstands + Hallowed Rock", tool = "Handstands", rock = "Hallowed Rock"},
+	{name = "Hallowed Squat + Hallowed Rock", tool = "Hallowed Squat", rock = "Hallowed Rock"}
 }
 
 for _, config in ipairs(farmingConfigs) do
