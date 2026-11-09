@@ -55,7 +55,7 @@ end
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TryHarderDeobfuscatingHAHAHAlol/Privatezz/refs/heads/main/GUI%20Library", true))()
 
-local window = library:AddWindow("PrimeKenzouu | Main - " .. Utils.greeting(), {
+local window = library:AddWindow("BossKenzouu | Test - " .. Utils.greeting(), {
 	title_bar = {Color3.fromRGB(0, 0, 0), Color3.fromRGB(0, 0, 0)},
 	title_bar_transparency = 0.3,
 	background = {Color3.fromRGB(0, 0, 0), Color3.fromRGB(0, 0, 0)},
@@ -82,7 +82,7 @@ local Tabs = {
 }
 
 Tabs.Info:Show()
-Tabs.Info:AddLabel("Made By PrimeKenzouu with ♥️").TextSize = 17
+Tabs.Info:AddLabel("Developed By Kenzouu with ♥️").TextSize = 17
 Tabs.Info:AddLabel("Official TikTok: Kenzouu Warfreakkk!").TextSize = 17
 Tabs.Info:AddButton("Copy TikTok Link", function()
 	if setclipboard then
@@ -1356,22 +1356,14 @@ end)
 
 Tabs.Farming:AddLabel("⚙️ Misc:")
 
-Tabs.Farming:AddSwitch("Auto Lift (Gamepass)", function(bool)
-	if bool then
-		for _, gamepass in pairs(Services.ReplicatedStorage.gamepassIds:GetChildren()) do
-			local value = Instance.new("IntValue")
-			value.Name = gamepass.Name
-			value.Value = gamepass.Value
-			value.Parent = PlayerData.Player.ownedGamepasses
-		end
-	else
-		for _, gamepass in pairs(Services.ReplicatedStorage.gamepassIds:GetChildren()) do
-			if PlayerData.Player.ownedGamepasses:FindFirstChild(gamepass.Name) and 
-			   PlayerData.Player.ownedGamepasses[gamepass.Name].Value == gamepass.Value then
-				PlayerData.Player.ownedGamepasses[gamepass.Name]:Destroy()
-			end
-		end
-	end
+local Players = game:GetService("Players")
+local localPlayer = Players.LocalPlayer
+
+local autoLiftEnabled = false
+
+Tabs.Farming:AddSwitch("Gamepass Auto Lift", function(state)
+    autoLiftEnabled = state
+    localPlayer:SetAttribute("AutoLiftEnabled", autoLiftEnabled)
 end)
 
 local PunchData = {AutoPunching = false}
@@ -1412,7 +1404,7 @@ end)
 
 Tabs.Farming:AddSwitch("Auto Egg (30 min)", function(state) EggData.Running = state end)
 
-Tabs.Farming:AddLabel("🔄️ Rebirths:")
+Tabs.Farming:AddLabel("Rebirths:")
 
 local RebirthData = {
 	Label = Tabs.Farming:AddLabel("Rebirths: 0"),
@@ -1455,12 +1447,12 @@ end)
 
 local SizeData = {Active = false}
 
-Tabs.Farming:AddSwitch("Auto Size 1", function(bool) SizeData.Active = bool end):Set(false)
+Tabs.Farming:AddSwitch("Auto Size 2", function(bool) SizeData.Active = bool end):Set(false)
 
 task.spawn(function()
 	while true do
 		if SizeData.Active and PlayerData.Character and PlayerData.Humanoid then
-			Remotes.ChangeSpeedSize:InvokeServer("changeSize", 1)
+			Remotes.ChangeSpeedSize:InvokeServer("changeSize", 2)
 		end
 		task.wait(0.01)
 	end
@@ -1502,7 +1494,7 @@ task.spawn(function()
 	end
 end)
 
-Tabs.Farming:AddLabel("🦾 Auto Exercises (recommended for rebirthing):")
+Tabs.Farming:AddLabel("Auto Exercises (suggested for rebirth):")
 
 local ExerciseData = {
 	SelectedTool = nil,
@@ -1575,13 +1567,13 @@ Tabs.Farming:AddSwitch("Start exercising", function(enabled)
 	end
 end)
 
-Tabs.Farming:AddLabel("👾 Glitching:")
+Tabs.Farming:AddLabel("Select Rocks:")
 
 local RockData = {
 	Data = {["Hallowed Rock - 0 Dura"] = 0, [" Overcharged Rock - 0 Dura"] = 0, ["Tiny Rock - 0 Dura"] = 0, ["Large Rock - 100 Dura"] = 100, ["Punching Rock - 10 Dura"] = 10,
 		["Golden Rock - 5k Dura"] = 5000, ["Frost Rock - 150k Dura"] = 150000, ["Mythical Rock - 400k Dura"] = 400000,
 		["Eternal Rock - 750k Dura"] = 750000, ["Legend Rock - 1m Dura"] = 1000000, ["Muscle King Rock - 5m Dura"] = 5000000,
-		["Jungle Rock - 10m Dura"] = 10000000, ["Industrial Rock - 25m Dura"] = 25000000},
+		["Jungle Rock - 10m Dura"] = 10000000, ["Glacial Rock - 10m Dura"] = 10000000, ["Industrial Rock - 25m Dura"] = 25000000},
 	SelectedRock = nil
 }
 
@@ -1611,7 +1603,7 @@ Tabs.Farming:AddSwitch("Auto Rock", function(enabled)
 	end
 end)
 
-Tabs.Farming:AddButton("Anti Lag (for everything)", function()
+Tabs.Farming:AddButton("Anti Lag (Full Optimization)", function()
 	for _, v in pairs(Services.Lighting:GetChildren()) do if v:IsA("Sky") then v:Destroy() end end
 	local darkSky = Instance.new("Sky")
 	darkSky.Name = "DarkSky"
@@ -1635,13 +1627,13 @@ Tabs.Farming:AddButton("Anti Lag (for everything)", function()
 	end
 end)
 
-Tabs.Farming:AddLabel("🔥 Better Strength Farming:")
+Tabs.Farming:AddLabel("OP Farming:")
 
 local farmingConfigs = {
-	{name = "Pushup + Hallowed Rock", tool = "Pushups", rock = "Hallowed Rock"},
-	{name = "Situps + Hallowed Rock", tool = "Situps", rock = "Hallowed Rock"},
-	{name = "Handstands + Hallowed Rock", tool = "Handstands", rock = "Hallowed Rock"},
-	{name = "Hallowed Squat + Hallowed Rock", tool = "Hallowed Squat", rock = "Hallowed Rock"}
+	{name = "Pushup + Glacial Rock", tool = "Pushups", rock = "Glacial Rock"},
+	{name = "Situps + Glacial Rock", tool = "Situps", rock = "Glacial Rock"},
+	{name = "Handstands + Glacial Rock", tool = "Handstands", rock = "Glacial Rock"},
+	{name = "Zero Degrees Squat 2 + Glacial Rock", tool = "Zero Degrees Squat 2", rock = "Glacial Rock"}
 }
 
 for _, config in ipairs(farmingConfigs) do
